@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업 풀이</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: lightseagreen;
+            cursor: pointer;
+        }
+
+        .pop_up{
+            width: 400px;
+            height: 500px;
+            background-color: skyblue;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .close_btn{
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .active{
+            display: block;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <div class="pop_up">
+        <div class="close_btn">X</div>
+    </div>
+
+    <script>
+
+        (function(){
+
+        const box = document.querySelector('.box')
+        const popup = document.querySelector('.pop_up')
+        const closebtn = document.querySelector('.close_btn')
+
+
+        box.addEventListener('click', () => {
+            popup.classList.add('active')
+        })
+
+
+       closebtn.addEventListener('click', () => {
+           popup.classList.remove('active');
+       });
+
+
+
+
+
+        })();//end
+
+
+
+    </script>
+    
+</body>
+</html>
